@@ -1,0 +1,23 @@
+{
+  "name": "discord-access-bot",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/builders": "^1.10.0",
+    "axios": "^1.7.9",
+    "cors": "^2.8.5",
+    "discord-access-bot": "file:",
+    "discord.js": "^14.17.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pg": "^8.13.1",
+    "uuid": "^11.0.5"
+  },
+  "keywords": [],
+  "description": ""
+}

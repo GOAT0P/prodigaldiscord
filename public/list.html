@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members List - Team Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="list.html" class="active">Members List</a></li>
+            <li><a href="bulkedit.html">Bulk Edit</a></li>
+        </ul>
+    </nav>
+
+    <div id="app">
+        <div class="card">
+            <h1>Member List</h1>
+            <div class="filters">
+                <div class="form-group">
+                    <label for="batch-filter">Filter by Batch</label>
+                    <select id="batch-filter">
+                        <option value="">All Batches</option>
+                    </select>
+                </div>
+                <button onclick="applyFilters()" class="btn btn-primary filter-btn">Filter</button>
+                <button onclick="clearFilters()" class="btn clear-btn">Clear</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Batch Code</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Role</th>
+                        <th>Discord ID</th>
+                        <th>Reference Code</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="members-table"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="loading" id="loading-indicator">
+      <svg width="24" height="24" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none" />
+      </svg>
+      Loading...
+    </div>
+
+    <!-- Edit Modal -->
+    <div class="modal-backdrop" id="edit-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Edit Member</h2>
+                <button type="button" class="btn modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <form id="edit-form" class="modal-form">
+                <input type="hidden" id="edit-id">
+                <div class="form-group">
+                    <label for="edit-batch-code">Batch Code</label>
+                    <input type="text" id="edit-batch-code" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-first-name">First Name</label>
+                    <input type="text" id="edit-first-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-last-name">Last Name</label>
+                    <input type="text" id="edit-last-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-role">Role</label>
+                    <select id="edit-role" required></select>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-danger" onclick="closeModal()">Cancel</button>
+                    <button type="submit" class="btn btn-success">
+                        <span class="button-text">Save Changes</span>
+                        <span class="button-loader" style="display: none;">
+                            <svg width="16" height="16" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"/>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
