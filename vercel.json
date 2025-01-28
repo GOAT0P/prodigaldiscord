@@ -1,0 +1,22 @@
+{
+  "builds": [
+    {
+      "src": "app.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "discord-bot/bot.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/app.js"
+    },
+    {
+      "src": "/discord-bot/(.*)",
+      "dest": "/discord-bot/bot.js"
+    }
+  ]
+}
