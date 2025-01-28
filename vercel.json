@@ -1,7 +1,8 @@
 {
   "version": 2,
   "functions": {
-    "api/index.js": { "runtime": "nodejs22.x" }
+    "api/index.js": { "runtime": "@vercel/node" },
+    "discord-bot/bot.js": { "runtime": "@vercel/node" }
   },
   "routes": [
     {
