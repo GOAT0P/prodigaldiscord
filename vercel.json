@@ -7,6 +7,10 @@
     {
       "src": "discord-bot/bot.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "public/index.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -15,8 +19,12 @@
       "dest": "discord-bot/bot.js"
     },
     {
-      "src": "/(.*)",
+      "src": "/api/(.*)",
       "dest": "app.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/public/index.html"
     }
   ],
   "headers": [
@@ -25,7 +33,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src 'self';"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src 'self'; img-src 'self'; style-src 'self';"
         }
       ]
     }
