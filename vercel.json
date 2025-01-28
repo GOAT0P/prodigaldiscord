@@ -9,10 +9,6 @@
       "dest": "/api/index.js"
     },
     {
-      "src": "/discord-bot/(.*)",
-      "dest": "/discord-bot/bot.js"
-    },
-    {
       "src": "/",
       "dest": "/public/index.html"
     },
