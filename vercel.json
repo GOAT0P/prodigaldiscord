@@ -1,31 +1,16 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "app.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "public/index.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "public/styles.css",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "public/script.js",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "public/list.html",
-      "use": "@vercel/static"
-    }
-  ],
+  "functions": {
+    "api/index.js": { "runtime": "nodejs22.x" }
+  },
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/app.js"
+      "dest": "/api/index.js"
+    },
+    {
+      "src": "/discord-bot/(.*)",
+      "dest": "/discord-bot/bot.js"
     },
     {
       "src": "/",
@@ -43,5 +28,8 @@
       "src": "/script.js",
       "dest": "/public/script.js"
     }
-  ]
+  ],
+  "staticFiles": {
+    "public": "public"
+  }
 }
