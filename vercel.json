@@ -15,16 +15,16 @@
   ],
   "rewrites": [
     {
-      "src": "/discord-bot/(.*)",
-      "dest": "discord-bot/bot.js"
+      "source": "/discord-bot/(.*)",
+      "destination": "/discord-bot/bot.js"
     },
     {
-      "src": "/api/(.*)",
-      "dest": "app.js"
+      "source": "/api/(.*)",
+      "destination": "/app.js"
     },
     {
-      "src": "/(.*)",
-      "dest": "/public/index.html"
+      "source": "/(.*)",
+      "destination": "/public/index.html"
     }
   ],
   "headers": [
