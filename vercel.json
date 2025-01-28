@@ -19,17 +19,6 @@
     {
       "src": "/list",
       "dest": "/public/list.html"
-    },
-    {
-      "src": "/styles.css",
-      "dest": "/public/styles.css"
-    },
-    {
-      "src": "/script.js",
-      "dest": "/public/script.js"
     }
-  ],
-  "staticFiles": {
-    "public": "public"
-  }
+  ]
 }
