@@ -11,15 +11,14 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "/app.js"
+      "src": "/discord-bot/(.*)",
+      "dest": "discord-bot/bot.js"
     },
     {
-      "src": "/discord-bot/(.*)",
-      "dest": "/discord-bot/bot.js"
+      "src": "/(.*)",
+      "dest": "app.js"
     }
-  ]
-  {
+  ],
   "headers": [
     {
       "source": "/(.*)",
