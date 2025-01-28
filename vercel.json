@@ -7,10 +7,6 @@
     {
       "src": "discord-bot/bot.js",
       "use": "@vercel/node"
-    },
-    {
-      "src": "public/index.html",
-      "use": "@vercel/static"
     }
   ],
   "rewrites": [
@@ -21,12 +17,11 @@
     {
       "source": "/api/(.*)",
       "destination": "/app.js"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/public/index.html"
     }
   ],
+  "static": {
+    "public": "public"
+  },
   "headers": [
     {
       "source": "/(.*)",
